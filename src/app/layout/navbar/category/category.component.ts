@@ -1,12 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CategoryService } from './category.service';
+import { Category } from './category.model';
 
 @Component({
   selector: 'app-category',
   standalone: true,
-  imports: [],
+  imports: [FontAwesomeModule],
   templateUrl: './category.component.html',
   styleUrl: './category.component.scss'
 })
 export class CategoryComponent {
+//Rembember to implement click after... when we do listing
 
+  categoryService = Inject(CategoryService);
+
+  categories: Category[] | undefined;
+
+  currentActivateCategory = this.categoryService.getCategoryByDefault();
+
+  ngOnInit(){
+    this.fetchCategories()
+  }
+
+  private fetchCategories(){
+    this.categories = this.categoryService.getCategories();
+  }
 }
