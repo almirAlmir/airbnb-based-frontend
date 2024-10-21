@@ -1,9 +1,11 @@
 import {
-    IconDefinition, faUser
+    IconDefinition, faBars, faSearch, faUser
 } from "@fortawesome/free-solid-svg-icons"
 import {faAirbnb} from "@fortawesome/free-brands-svg-icons";
 
 export const fontAwesomeIcons: IconDefinition[] = [
     faAirbnb,
-    faUser
+    faUser,
+    faSearch,
+    faBars
 ]
