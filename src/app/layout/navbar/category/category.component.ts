@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CategoryService } from './category.service';
 import { Category } from './category.model';
@@ -13,7 +13,7 @@ import { Category } from './category.model';
 export class CategoryComponent {
 //Rembember to implement click after... when we do listing
 
-  categoryService = Inject(CategoryService);
+  categoryService = inject(CategoryService);
 
   categories: Category[] | undefined;
 
